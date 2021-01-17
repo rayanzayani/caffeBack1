@@ -6,6 +6,8 @@ const passport = require("passport");
 var path = require("path");
 var indexRouter = require("./routes/index");
 var reservationRouter = require("./routes/reservation");
+var socialRouter = require("./routes/social");
+var loginRouter = require("./routes/api/login");
 var cookieParser = require("cookie-parser");
 const app = express();
 
@@ -39,6 +41,8 @@ app.set("view engine", "ejs");
 app.use(passport.initialize()); // Passport config
 app.use(indexRouter);
 app.use(reservationRouter);
+app.use(socialRouter);
+app.use(loginRouter);
 app.use(express.static("public"));
 // app.use(login);
 // app.use(personRoute);

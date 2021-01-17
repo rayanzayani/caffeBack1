@@ -6,6 +6,10 @@ ObjectId.prototype.valueOf = function () {
   return this.toString();
 };
 const ReseauxSchema = new Schema({
+  email: {
+    type: String,
+    required: true,
+  },
   facebook: {
     type: String,
     required: true,

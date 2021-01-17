@@ -6,12 +6,20 @@ ObjectId.prototype.valueOf = function () {
   return this.toString();
 };
 const ReservationSchema = new Schema({
-  name: {
+  nom: {
+    type: String,
+    required: true,
+  },
+  prenom: {
     type: String,
     required: true,
   },
   cin: {
     type: Number,
+    required: true,
+  },
+  email: {
+    type: String,
     required: true,
   },
   phone: {
@@ -20,10 +28,22 @@ const ReservationSchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now,
+    required: true,
+  },
+  startDate: {
+    type: Date,
+    required: true,
+  },
+  endDate: {
+    type: Date,
+    required: true,
   },
   nbrPersonne: {
     type: Number,
+    required: true,
+  },
+  motif: {
+    type: String,
     required: true,
   },
 });

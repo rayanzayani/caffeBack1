@@ -3,6 +3,66 @@
 <html lang="en">
 
 <head>
+    <style>
+        .lightbox-gallery {
+    /* background-image: linear-gradient(#4A148C, #E53935); */
+    background-repeat: no-repeat;
+    color: #000;
+    overflow-x: hidden
+}
+
+.lightbox-gallery p {
+    /* color: rgb(117, 104, 104) */
+}
+
+.lightbox-gallery h2 {
+    /* font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    color: #fff */
+}
+
+@media (max-width:767px) {
+    .lightbox-gallery h2 {
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 24px
+    }
+}
+
+.lightbox-gallery .intro {
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto 40px
+}
+
+.lightbox-gallery .intro p {
+    margin-bottom: 0
+}
+
+.lightbox-gallery .photos {
+    padding-bottom: 20px
+}
+
+.lightbox-gallery .item {
+    padding-bottom: 30px
+}
+.video-title{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.video-container{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 100%;
+}
+    </style>
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
@@ -19,6 +79,7 @@
   <title>nom café</title>  
   <link rel="icon" href="../img/icon.png" type="image/icon type">
 <link href="../style.css" rel="stylesheet"></head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 
 <body>
 
@@ -56,18 +117,27 @@
 
 
 <!-- Add your site or app content here -->
-<div class="background-image-container white-text-container" style="background-image: url('../img/cafe.jpg')">
+<div class="background-image-container white-text-container" style="background-image: url('../img/cafe2.jpg')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <h1>The Factory</h1>
                 <p class="">THE BEST PLACE FOR WORK TOGETHER</p>
-                <a href="#contact-section-container" class="btn btn-primary btn-lg anchor-link" title="">Get in touch</a>
+                <a href="#contact-section-container" class="btn btn-primary btn-lg anchor-link" title="">Restez en contact !</a>
             </div>
         </div>
     </div>
 </div>
+<!-- <div class="video-title">
+
+    <div class="video-container">
+        <h1>The Facotry</h1>
+        <video autoplay muted>
+            <source src="../video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div> -->
 
 <div class="section-container">
     <div class="container">
@@ -109,31 +179,21 @@
     </div>
 </div>
 
-<div class="section-container section-half-background-image-container">
-    <div class="image-column" style="background-image: url('../img/cafe2.jpg')"></div>
+<div class="lightbox-gallery">
     <div class="container">
-        <div class="row">
-            <div class="section-label reveal">
-                <p>Coworking</p>
-            </div>
-            <div class="col-md-6 col-md-offset-6 text-column">
-                <h2>Dui augue orci</h2>
-                <h3>Lorem ipsum</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor. Phasellus ut
-                    lacus tellus. In pretium lobortis blandit. Nam eu laoreet velit. Vivamus laoreet, sem nec scelerisque
-                    elementum, dui augue aliquet urna, ut bibendum purus erat ut massa. Mauris diam orci, feugiat a turpis
-                    et, congue accumsan risus. Nulla malesuada leo sodales, auctor augue quis, condimentum lacus. Phasellus
-                    sed sollicitudin quam, a bibendum urna.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor. Phasellus «
-                    ut lacus » tellus. In pretium lobortis blandit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor. Phasellus ut
-                    lacus tellus. In pretium lobortis blandit.</p>
-
-            </div>
+        <div class="intro">
+            <h2 class="text-center">Galerie !</h2>
+            <p class="text-center">Et encore plus !</p>
+        </div>
+        <div class="row photos">
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><img src="../img/cafe.jpg" /></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
         </div>
     </div>
 </div>
-
 
 
 <div class="section-container">
@@ -221,17 +281,9 @@
                         <textarea class="form-control" rows="3" placeholder="Enter your message"></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1">Email me a copy
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox2" value="option2">I am a human
-                        </label>
-                    </div>
+                    
 
-                    <button type="submit" class="btn btn-primary">Send message</button>
-                    <a href="" class="btn btn-default">Reset</a>
+                    <button type="submit" class="btn btn-primary"><a href="mailto:magicabbes24@gmail.com" style="color: #ffffff;">Send message</a></button>
                 </form>
             </div>
         </div>
@@ -247,6 +299,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   scrollRevelation('reveal');
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 
 <footer class="footer-container white-text-container">
     <div class="container">
