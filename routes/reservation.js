@@ -35,6 +35,7 @@ reservationRoute.route("/addReservation").post((req, res) => {
   } catch (err) {
     console.log("error!");
   }
+  res.redirect("back");
 });
 
 /** supprimer reservation **/
@@ -77,7 +78,7 @@ reservationRoute.route("/updateReservation/:id").post(function (req, res) {
 /** liste des reservation **/
 reservationRoute.route("/reservations").get((req, res) => {
   Reservation.find({}, function (err, reservations) {
-    res.render("/reservations", {
+    res.render("reservations", {
       reservations: reservations,
     });
   });

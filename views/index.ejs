@@ -230,21 +230,21 @@
 <div class="">
     <div class='container-fluid'>
         <div class="row map-container">
-            <div id="map"></div>
+            <iframe id="map" src="" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             <div class="col-xs-10 col-md-4 contact-block-container reveal">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <h3>Phone</h3>
-                        <p>+ 123 45 67 890</p>
+                        <p><%= reseaux[0].phone %> </p>
 
                         <h3>E-mail</h3>
-                        <p>hello@email.com</p>
+                        <p><%= reseaux[0].email %> </p>
 
                     </div>
 
                     <div class="col-xs-12 col-sm-6">
                         <h3>Address</h3>
-                        <p>42 rue rouelle 75015, Paris</p>
+                        <p><%= reseaux[0].adresse %> </p>
 
                         <h3>Open hours</h3>
                         <p>Mon - Fri : 9AM - 5PM</p>
@@ -313,10 +313,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     <h4>Do you like ? Share this !</h4>
                     <div>
                         <p>
-                            <a href="https://www.instagram.com" class="fa-icon" title="">
+                            <a href="http://www.instagram.com/<%= reseaux[0].instagram %>" class="fa-icon" title="">
                         <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                            <a href="https://www.facebook.com" class="fa-icon" title="">
+                            <a href="http://www.facebook.com/<%= reseaux[0].facebook %>" class="fa-icon" title="">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                             <a href="https://www.linkedin.com" class="fa-icon" title="">

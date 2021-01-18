@@ -26,5 +26,9 @@ const ReseauxSchema = new Schema({
     type: String,
     required: true,
   },
+  adresse: {
+    type: String,
+    required: true,
+  },
 });
 module.exports = Reseau = mongoose.model("reseau", ReseauxSchema);

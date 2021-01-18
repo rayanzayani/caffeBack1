@@ -6,7 +6,11 @@ let socialRoute = express.Router();
 const saltRounds = 10;
 /* GET home page. */
 socialRoute.route("/social").get((req, res) => {
-  res.render("social");
+  Reseaux.find({}, function (err, socials) {
+    res.render("social", {
+      socials: socials,
+    });
+  });
 });
 
 /** Ajouter reservation **/
@@ -24,6 +28,7 @@ socialRoute.route("/addSocial").post((req, res) => {
     phone: req.body.phone,
     localisation: req.body.localisation,
     email: req.body.email,
+    adresse: req.body.adresse,
   });
   try {
     newReseaux.save();
@@ -41,6 +46,7 @@ socialRoute.route("/updateSocials/:id").post(function (req, res) {
     data.phone = req.body.phone;
     data.localisation = req.body.localisation;
     data.email = req.body.email;
+    data.adresse = req.body.adresse;
 
     try {
       data.save().then(res.redirect("back"));
@@ -51,12 +57,12 @@ socialRoute.route("/updateSocials/:id").post(function (req, res) {
 });
 
 /** liste des reservation **/
-socialRoute.route("/socials").get((req, res) => {
-  Reseaux.find({}, function (err, socials) {
-    res.render("/socials", {
-      socials: socials,
-    });
-  });
-});
+// socialRoute.route("/social").get((req, res) => {
+//   Reseaux.find({}, function (err, socials) {
+//     res.render("/social", {
+//       socials: socials,
+//     });
+//   });
+// });
 
 module.exports = socialRoute;

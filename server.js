@@ -5,6 +5,7 @@ const cors = require("cors");
 const passport = require("passport");
 var path = require("path");
 var indexRouter = require("./routes/index");
+var socialRouter = require("./routes/social");
 var reservationRouter = require("./routes/reservation");
 var socialRouter = require("./routes/social");
 var loginRouter = require("./routes/api/login");
@@ -40,6 +41,7 @@ app.set("view engine", "ejs");
 // Passport middleware
 app.use(passport.initialize()); // Passport config
 app.use(indexRouter);
+app.use(socialRouter);
 app.use(reservationRouter);
 app.use(socialRouter);
 app.use(loginRouter);

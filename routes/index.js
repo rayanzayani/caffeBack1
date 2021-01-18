@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-// const User = require("../models/User");
+const social = require("../models/Reseaux");
 const saltRounds = 10;
 // var storage = multer.diskStorage({
 //   destination: function (req, file, cb) {
@@ -13,10 +13,18 @@ const saltRounds = 10;
 // var upload = multer({ storage: storage });
 /* GET home page. */
 router.route("/index").get(function (req, res, next) {
-  res.render("index");
+  Reservation.find({}, function (err, reseaux) {
+    res.render("index", {
+      reseaux: reseaux,
+    });
+  });
 });
 router.route("/").get(function (req, res, next) {
-  res.render("index");
+  Reservation.find({}, function (err, reseaux) {
+    res.render("index", {
+      reseaux: reseaux,
+    });
+  });
 });
 
 module.exports = router;
