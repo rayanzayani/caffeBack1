@@ -77,9 +77,119 @@
                         <td ><%= reservations[i].endDate %> </td>
                         <td ><%= reservations[i].nbrPersonne %> </td>
                         <td ><%= reservations[i].motif %> </td>
-                        <td >modifier </td>
+                        <td ><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalUpdate<%= i %>">Update</button> </td>
                         <td ><a class="btn btn-danger" href="/deleteReservation/<%=reservations[i]._id  %> ">Supprimer</a> </td>
                     </tr>
+                           <!-- Modal modification -->
+<div class="modal fade" id="modalUpdate<%= i %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Mettre à jour réservation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row g-3 needs-validation" method="POST" action="/updateReservation/<%=reservations[i]._id %> ">
+                <div class="col-md-4">
+                  <label for="validationCustom01" class="form-label">Nom</label>
+                  <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom" value="<%= reservations[i].nom %> " required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustom02" class="form-label">Prénom</label>
+                  <input type="text" class="form-control" id="prenom" placeholder="prénom" name="prenom" value="<%= reservations[i].prenom %>" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <label for="validationCustomUsername" class="form-label">email</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" placeholder="exemple@gmail.com" name="email" value="<%= reservations[i].email %>" required>
+                    <div class="invalid-feedback">
+                      Please choose a username.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustomUsername" class="form-label">CIN</label>
+                    <div class="input-group has-validation">
+                      <input type="number" class="form-control" id="cin" aria-describedby="inputGroupPrepend" min="8" placeholder="12345678" name="cin" value="<%= reservations[i].cin %>" required>
+                      <div class="invalid-feedback">
+                        Please choose a username.
+                      </div>
+                    </div>
+                  </div>
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">Tél</label>
+                  <input type="text" class="form-control" id="tel" placeholder="(+216) 20 123 456" name="phone" value="<%= reservations[i].phone %>" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid phone number.
+                  </div>
+                </div>
+    
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="date"  name="date" value="<%= reservations[i].date %>" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid phone number.
+                  </div>
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">Nombre de personne</label>
+                  <input type="number" class="form-control" id="nbrPersonne" placeholder="2" name="nbrPersonne" value="<%= reservations[i].nbrPersonne %>" required>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div> 
+    
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">Motif de réservation</label>
+                  <select class="form-select" aria-label="Default select example" name="motif">
+                    <option selected value="caffe">Caffé</option>
+                    <option value="anniversaire">Anniversaire</option>
+                    <option value="reunion">Réunion</option>
+                    <option value="evenement">Evénement</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">De</label>
+                  <input class="form-control" type="time" id="startDate" name="startDate" value="<%= reservations[i].startDate %>" required />
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">A</label>
+                  <input class="form-control" type="time" id="endDate" name="endDate" value="<%= reservations[i].endDate %>" required />
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div>
+                
+                <div class="col-12">
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Mettre à jour maintenant</button>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
                     <% } %>
             </tbody>
           </table>
@@ -194,6 +304,8 @@
       </div>
     </div>
   </div>
+
+    
       </div>
 </body>
 </html>
