@@ -62,6 +62,120 @@
     left: 5%;
     width: 100%;
 }
+.gallery {
+  display: grid;
+  grid-template-rows: repeat(5, 15vh);
+  grid-template-columns: repeat(2, 20vw);
+  transition: all 0.3s cubic-bezier(0.5, 0.8, 0.5, 0.2);
+  /* background-color: #82a6cb; */
+  border-radius: 10px;
+  padding: 0.25em;
+  cursor: zoom-in;
+  align-items: center;
+}
+@media (min-width: 40em) {
+  .gallery {
+    grid-template-columns: repeat(5, 18vw);
+    grid-template-rows: repeat(2, 20vh);
+  }
+}
+@media (min-width: 60em) {
+  .gallery {
+    grid-template-columns: repeat(10, 8vw);
+    grid-template-rows: 25vh;
+  }
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 0.15s cubic-bezier(0.3, 0.1, 0.3, 0.85);
+  position: relative;
+  box-shadow: 0 0 0 #0000;
+  opacity: 0.67;
+  filter: sepia(80%) hue-rotate(180deg);
+}
+img:first-child {
+  border-radius: 10px 10px 0 0;
+}
+img:last-child {
+  border-radius: 0 0 10px 10px;
+}
+@media (min-width: 40em) and (max-width: 59.99em) {
+  img:first-child {
+    border-radius: 10px 0 0 0;
+  }
+  img:nth-child(5) {
+    border-radius: 0 10px 0 0;
+  }
+  img:nth-child(6) {
+    border-radius: 0 0 10px 0;
+  }
+  img:last-child {
+    border-radius: 0 0 0 10px;
+  }
+}
+@media (min-width: 60em) {
+  img:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+  img:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+}
+img:hover {
+  opacity: 1;
+  z-index: 1;
+  box-shadow: 1em 1em 1em #0004;
+  transition: all 0.3s cubic-bezier(0.3, 0.1, 0.3, 0.85);
+  filter: sepia(0%) hue-rotate(0deg);
+  border-radius: 5px;
+  width: 300%;
+  height: 300%;
+  left: -100%;
+  top: -100%;
+}
+@media (min-width: 40em) {
+  img:hover {
+    width: 250%;
+    height: 500%;
+    left: -75%;
+    top: -200%;
+  }
+}
+@media (min-width: 40em) and (orientation: portrait) {
+  img:hover {
+    width: 300%;
+    height: 300%;
+    left: -100%;
+    top: -100%;
+  }
+}
+@media (min-width: 60em) {
+  img:hover {
+    width: 350%;
+    height: 150%;
+    left: -75%;
+    top: -25%;
+  }
+  img:hover ~ img {
+    left: 175%;
+  }
+}
+@media (min-width: 60em) and (orientation: landscape) {
+  img:hover {
+    width: 300%;
+    height: 300%;
+    left: -75%;
+    top: -100%;
+  }
+  img:hover ~ img {
+    left: 100%;
+  }
+}
     </style>
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -179,53 +293,32 @@
     </div>
 </div>
 
-<div class="lightbox-gallery">
+<!-- <div class="lightbox-gallery"> -->
     <div class="container">
         <div class="intro">
             <h2 class="text-center">Galerie !</h2>
             <p class="text-center">Et encore plus !</p>
         </div>
-        <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><img src="../img/cafe.jpg" /></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg" data-lightbox="photos"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190717/gallery/original/04_g_car.jpg"></a></div>
-        </div>
+        <center>
+
+            <div class="gallery">
+                <img src="../img/IMG_20201227_194043.jpg" alt="">
+                <img src="../img/IMG_20201227_194053.jpg" alt="">
+                <img src="../img/IMG_20201227_194110.jpg" alt="">
+                <img src="../img/IMG_20201227_194200.jpg" alt="">
+                <img src="../img/IMG_20201227_194257.jpg" alt="">
+                <img src="../img/IMG_20201227_194423.jpg" alt="">
+                <img src="../img/IMG_20201227_194738.jpg" alt="">
+                <img src="../img/IMG_20201227_195032.jpg" alt="">
+                <img src="../img/IMG_20210112_145117.jpg" alt="">
+                <img src="../img/cafe.jpg" alt="">
+              </div>
+        </center>
     </div>
-</div>
+<!-- </div> -->
 
 
-<div class="section-container">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-12 section-container-spacer">
-                <h2 class="text-center">Consectetur adipiscing</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-md-4">
-                <img src="./assets/images/img-02.jpg" alt="" class="img-responsive">
-                <h3 class="text-center">Consectetur</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor. Phasellus ut
-                    lacus tellus. In pretium lobortis blandit.</p>
-            </div>
 
-            <div class="col-xs-12 col-md-4">
-                <img src="./assets/images/img-03.jpg" alt="" class="img-responsive">
-                <h3 class="text-center">Malesuada</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor. Phasellus ut
-                    lacus tellus. In pretium lobortis blandit.</p>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <img src="./assets/images/img-04.jpg" alt="" class="img-responsive">
-                <h3 class="text-center">Phasellus</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor. Phasellus ut
-                    lacus tellus. In pretium lobortis blandit.</p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="">
     <div class='container-fluid'>
