@@ -6,7 +6,11 @@ ObjectId.prototype.valueOf = function () {
   return this.toString();
 };
 const UserSchema = new Schema({
-  name: {
+  nom: {
+    type: String,
+    required: true,
+  },
+  prenom: {
     type: String,
     required: true,
   },
@@ -17,25 +21,6 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true,
-  },
-  phone: {
-    type: String,
-    required: true,
-  },
-  address: {
-    type: String,
-    required: true,
-  },
-  profession: {
-    type: String,
-    required: true,
-  },
-  date: {
-    type: Date,
-    default: Date.now,
-  },
-  role: {
-    type: Number,
   },
 });
 module.exports = User = mongoose.model("users", UserSchema);

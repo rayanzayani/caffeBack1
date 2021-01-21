@@ -1,5 +1,6 @@
 var express = require("express");
 const Reservation = require("../models/Reservation");
+const User = require("../models/User");
 const validateRegisterInput = require("../validation/register");
 let reservationRoute = express.Router();
 // const User = require("../models/User");
