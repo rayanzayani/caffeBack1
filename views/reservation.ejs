@@ -41,21 +41,21 @@
         <br><br><br>
         <form class="row g-3 needs-validation" method="POST" action="/addReservation">
             <div class="col-md-4">
-              <label for="validationCustom01" class="form-label">Nom</label>
+              <label for="validationCustom01" class="form-label">Nom<label style="color: red;">*</label></label>
               <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-4">
-              <label for="validationCustom02" class="form-label">Prénom</label>
+              <label for="validationCustom02" class="form-label">Prénom <label style="color: red;">*</label></label>
               <input type="text" class="form-control" id="prenom" placeholder="prénom" name="prenom" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-4">
-              <label for="validationCustomUsername" class="form-label">email</label>
+              <label for="validationCustomUsername" class="form-label">email<label style="color: red;">*</label></label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                 <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" placeholder="exemple@gmail.com" name="email" required>
@@ -64,17 +64,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-                <label for="validationCustomUsername" class="form-label">CIN</label>
-                <div class="input-group has-validation">
-                  <input type="number" class="form-control" id="cin" aria-describedby="inputGroupPrepend" min="8" placeholder="12345678" name="cin" required>
-                  <div class="invalid-feedback">
-                    Please choose a username.
-                  </div>
-                </div>
-              </div>
             <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">Tél</label>
+              <label for="validationCustom03" class="form-label">Tél<label style="color: red;">*</label></label>
               <input type="text" class="form-control" id="tel" placeholder="(+216) 20 123 456" name="phone" required>
               <div class="invalid-feedback">
                 Please provide a valid phone number.
@@ -82,7 +73,7 @@
             </div>
 
             <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">Date</label>
+              <label for="validationCustom03" class="form-label">Date<label style="color: red;">*</label></label>
               <input type="date" class="form-control" id="date"  name="date" required>
               <div class="invalid-feedback">
                 Please provide a valid phone number.
@@ -90,7 +81,7 @@
             </div>
 
             <div class="col-md-3">
-              <label for="validationCustom04" class="form-label">Nombre de personne</label>
+              <label for="validationCustom04" class="form-label">Nombre de personne<label style="color: red;">*</label></label>
               <input type="number" class="form-control" id="nbrPersonne" placeholder="2" name="nbrPersonne" required>
               <div class="invalid-feedback">
                 Please select a valid state.
@@ -98,7 +89,7 @@
             </div> 
 
             <div class="col-md-3">
-              <label for="validationCustom04" class="form-label">Motif de réservation</label>
+              <label for="validationCustom04" class="form-label">Motif de réservation<label style="color: red;">*</label></label>
               <select class="form-select" aria-label="Default select example" name="motif">
                 <option selected value="caffe">Caffé</option>
                 <option value="anniversaire">Anniversaire</option>
@@ -111,7 +102,7 @@
             </div>
 
             <div class="col-md-3">
-              <label for="validationCustom04" class="form-label">De</label>
+              <label for="validationCustom04" class="form-label">De<label style="color: red;">*</label></label>
               <input class="form-control" type="time" id="startDate" name="startDate" required />
               <div class="invalid-feedback">
                 Please select a valid state.
@@ -119,15 +110,14 @@
             </div>
 
             <div class="col-md-3">
-              <label for="validationCustom04" class="form-label">A</label>
+              <label for="validationCustom04" class="form-label">A<label style="color: red;">*</label></label>
               <input class="form-control" type="time" id="endDate" name="endDate" required />
               <div class="invalid-feedback">
                 Please select a valid state.
               </div>
             </div>
             
-            <div class="col-12">
-            </div>
+            <label style="color: red;">* : champ oblogatoire</label>
             <div class="col-12">
               <button class="btn btn-primary" type="submit">Réservez maintenant</button>
             </div>
