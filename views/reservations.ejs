@@ -54,7 +54,6 @@
                 <th scope="col" hidden>#</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Prénom</th>
-                <th scope="col">CIN</th>
                 <th scope="col">email</th>
                 <th scope="col">Tél</th>
                 <th scope="col">Date</th>
@@ -73,7 +72,6 @@
                         <td hidden><%= reservations[i]._id %> </td>
                         <td ><%= reservations[i].nom %> </td>
                         <td ><%= reservations[i].prenom %> </td>
-                        <td ><%= reservations[i].cin %> </td>
                         <td ><%= reservations[i].email %> </td>
                         <td ><%= reservations[i].phone %> </td>
                         <td ><%= reservations[i].date %> </td>
@@ -119,15 +117,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                    <label for="validationCustomUsername" class="form-label">CIN</label>
-                    <div class="input-group has-validation">
-                      <input type="number" class="form-control" id="cin" aria-describedby="inputGroupPrepend" min="8" placeholder="12345678" name="cin" value="<%= reservations[i].cin %>" required>
-                      <div class="invalid-feedback">
-                        Please choose a username.
-                      </div>
-                    </div>
-                  </div>
                 <div class="col-md-6">
                   <label for="validationCustom03" class="form-label">Tél</label>
                   <input type="text" class="form-control" id="tel" placeholder="(+216) 20 123 456" name="phone" value="<%= reservations[i].phone %>" required>
@@ -233,15 +222,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                    <label for="validationCustomUsername" class="form-label">CIN</label>
-                    <div class="input-group has-validation">
-                      <input type="number" class="form-control" id="cin" aria-describedby="inputGroupPrepend" min="8" placeholder="12345678" name="cin" required>
-                      <div class="invalid-feedback">
-                        Please choose a username.
-                      </div>
-                    </div>
-                  </div>
                 <div class="col-md-6">
                   <label for="validationCustom03" class="form-label">Tél</label>
                   <input type="text" class="form-control" id="tel" placeholder="(+216) 20 123 456" name="phone" required>

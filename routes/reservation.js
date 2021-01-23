@@ -22,7 +22,6 @@ reservationRoute.route("/addReservation").post((req, res) => {
   const newReservation = new Reservation({
     nom: req.body.nom,
     prenom: req.body.prenom,
-    cin: req.body.cin,
     email: req.body.email,
     phone: req.body.phone,
     date: req.body.date,
@@ -59,7 +58,6 @@ reservationRoute.route("/updateReservation/:id").post(function (req, res) {
   Reservation.findById(id, function (err, data) {
     data.nom = req.body.nom;
     data.prenom = req.body.prenom;
-    data.cin = req.body.cin;
     data.email = req.body.email;
     data.phone = req.body.phone;
     data.date = req.body.date;

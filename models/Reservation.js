@@ -14,10 +14,6 @@ const ReservationSchema = new Schema({
     type: String,
     required: true,
   },
-  cin: {
-    type: Number,
-    required: true,
-  },
   email: {
     type: String,
     required: true,
